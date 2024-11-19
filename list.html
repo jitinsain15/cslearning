@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f7f7f7;
+        }
+        .start_btn, .info_box, .quiz_box, .result_box {
+            max-width: 400px;
+            width: 100%;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .start_btn button, .buttons button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .start_btn button:hover, .buttons button:hover {
+            background: #0056b3;
+        }
+        .info_box .info-title, .quiz_box header .title, .result_box .complete_text {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .info_box .info-list .info, .quiz_box section .que_text, .result_box .score_text {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .quiz_box .option_list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .quiz_box .option_list div {
+            padding: 10px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .quiz_box .option_list div:hover {
+            background: #ddd;
+        }
+        .quiz_box footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .quiz_box .next_btn {
+            padding: 10px;
+            font-size: 14px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .quiz_box .next_btn:hover {
+            background: #0056b3;
+        }
+        .result_box .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .result_box .buttons button {
+            flex: 1;
+        }
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .start_btn, .info_box, .quiz_box, .result_box {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+            .info_box .info-list .info, .quiz_box section .que_text {
+                font-size: 14px;
+            }
+            .quiz_box footer .next_btn {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="start_btn"><button>Start Quiz</button></div>
+
+    <div class="info_box">
+        <div class="info-title"><span>Some Rules of this Quiz</span></div>
+        <div class="info-list">
+            <div class="info">1. You will have only <span>30 seconds</span> per each question.</div>
+            <div class="info">2. Once you select your answer, it can't be undone.</div>
+            <div class="info">3. You can't select any option once time goes off.</div>
+            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+            <div class="info">5. You'll get points on the basis of your correct answers.</div>
+        </div>
+        <div class="buttons">
+            <button class="quit">Exit Quiz</button>
+            <button class="restart">Continue</button>
+        </div>
+    </div>
+
+    <div class="quiz_box">
+        <header>
+            <div class="title">List Quiz</div>
+            <div class="timer">
+                <div class="time_left_txt">Time Left</div>
+                <div class="timer_sec">30</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text"></div>
+            <div class="option_list"></div>
+        </section>
+        <footer>
+            <div class="total_que"></div>
+            <button class="next_btn">Next Que</button>
+        </footer>
+    </div>
+
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">You've completed the Quiz!</div>
+        <div class="score_text"></div>
+        <div class="buttons">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Quit Quiz</button>
+        </div>
+    </div>
+
+    <script src="questions3.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

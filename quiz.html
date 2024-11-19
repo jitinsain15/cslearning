@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Learning</title>
+
+    <!-- Link to Google Fonts for better font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #003366;
+            color: white;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        /* Logo Styles */
+        .logo h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+    background: linear-gradient(45deg, #fd8080, #cfdd7c, #afffda); /* Gradient colors */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    color: transparent; /* Makes the text itself transparent so the gradient is visible */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Navigation styles */
+        .header .nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .header .nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .header .nav ul li a:hover {
+            color: #ff6f00;
+            transform: scale(1.1);
+        }
+
+        /* Side Slider Bar Styles */
+        .side-slider {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #003366;
+            overflow-x: hidden;
+            transition: width 0.5s ease;
+            padding-top: 60px;
+            z-index: 100;
+        }
+
+        .side-slider a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .side-slider a:hover {
+            background-color: #ff6f00;
+        }
+
+        .side-slider .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 36px;
+            color: white;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hamburger Icon for Mobile */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 30px;
+            color: white;
+        }
+
+        /* Main content styles */
+        main {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            margin-top: 30px;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        main h2 {
+            font-size: 3.5rem;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        main p {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #003366;
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.4rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-transform: uppercase;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background-color: #ff6f00;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #000000;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer .social-links {
+            margin-top: 15px;
+        }
+
+        .footer .social-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s ease, background 0.3s ease;
+        }
+
+        /* Instagram Gradient Effect */
+        .footer .social-links a.instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        .footer .social-links a:hover {
+            color: #ff6f00;
+        }
+
+        /* Responsive Styles - Tablet and Mobile */
+        @media (max-width: 1200px) {
+            .header .logo h1 {
+                font-size: 2rem;
+            }
+
+            .header .nav ul {
+                gap: 15px;
+            }
+
+            main h2 {
+                font-size: 3rem;
+            }
+
+            main p {
+                font-size: 1.2rem;
+            }
+
+            .cta-button {
+                font-size: 1.2rem;
+                padding: 15px 35px;
+            }
+        }
+
+        /* Mobile and Tablet: Show Sidebar and Hamburger */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .header .nav {
+                display: none;
+            }
+        }
+
+        /* Desktop: Full nav bar visible */
+        @media (min-width: 769px) {
+            .side-slider {
+                display: none;
+            }
+
+            .hamburger {
+                display: none;
+            }
+        }
+        .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #1ec2f4;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+    </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="logo">
+        <h1>CS Learning</h1>
+    </div>
+
+    <!-- Hamburger Icon -->
+    <span class="hamburger" onclick="toggleSidebar()">&#9776;</span>
+
+    <!-- Navigation Links for Desktop -->
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Side Slider -->
+<div id="side-slider" class="side-slider">
+    <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="resource.html">Resources</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<!-- Main Content -->
+<main>
+    <section>
+       <a href="pythonquiztopicwise.html"><button class="button" style="vertical-align:middle"><span>Python Quiz TopicWise</span></button></a>
+        <a href="sqlquiztopicwise.html"><button class="button" style="vertical-align:middle"><span>Sql Quiz TopicWise</span></button></a>
+        <a href="c++quiztopicwise.html"><button class="button" style="vertical-align:middle"><span>C++ Quiz TopicWise</span></button></a>
+    </section>
+</main>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 CS Learning. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">X</a>
+                <a href="#" class="instagram">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Side Slider -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("side-slider");
+            const hamburger = document.querySelector(".hamburger");
+
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+                hamburger.classList.remove("active");
+            } else {
+                sidebar.style.width = "250px";
+                hamburger.classList.add("active");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -3,91 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Jitin Sain</title>
+    <title>About Our Team</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f9;
+            background-color: #f4f4f9;
             color: #333;
         }
-        
         header {
-            background-color: #003366;
+            background-color: #0056a8;
             color: white;
-            padding: 20px 0;
             text-align: center;
+            padding: 40px 20px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            position: relative;
         }
-        
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 34px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
         }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            margin-top: 20px;
-            color: #003366;
-        }
-        
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-
-        .image-container {
+        .center-images {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            align-items: center;
+            gap: 30px;
+            margin: 30px 0;
         }
-
-        img {
-            border-radius: 50%;
+        .center-images img {
             width: 150px;
             height: 150px;
-            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        footer {
+        .center-images img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
             text-align: center;
-            padding: 10px 0;
-            background-color: #003366;
+        }
+        .content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #0056a8;
+            margin-bottom: 10px;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin: 10px 0;
+            font-weight: 400;
+        }
+        .content strong {
+            font-weight: 700;
+        }
+        footer {
+            background-color: #333;
             color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
             margin-top: 30px;
         }
-
+        .social-media {
+            margin: 10px 0;
+        }
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            transition: color 0.3s ease;
+        }
+        .social-media .instagram:hover {
+            color: #E1306C;
+        }
+        .social-media .facebook:hover {
+            color: #4267B2;
+        }
+        .social-media .x:hover {
+            color: #1DA1F2;
+        }
+        footer p {
+            margin: 10px 0 0;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>About Me</h1>
+    <h1>About Our Team</h1>
 </header>
 
-<div class="container">
-    <div class="image-container">
-        <!-- Add your image here -->
-        <img src="1.jpg" alt="Jitin Sain">
-    </div>
+<div class="center-images">
+    <img src="2.jpg" alt="Jitin Sain">
+    <img src="1.jpg" alt="Jwala Prasad">
+</div>
 
-    <h2>Hi, I'm Jitin Sain!</h2>
-    <p>Welcome to my About Us page! I am a computer science student with a passion for learning and technology. I have a deep interest in programming, problem-solving, and exploring the latest trends in the tech world.</p>
-    <p>I enjoy working on various projects related to software development and have experience in languages like Python, Java, and JavaScript. I’m constantly seeking opportunities to enhance my skills and contribute to the tech community.</p>
-    <p>In addition to coding, I am also interested in exploring artificial intelligence, machine learning, and data science. I aim to make a positive impact by creating innovative solutions and solving real-world problems through technology.</p>
-    <p>Feel free to connect with me through my social media channels or drop me a message if you'd like to collaborate or chat about tech!</p>
+<div class="content">
+    <h1>About Our Team</h1>
+    <p><strong>We are a dynamic duo</strong> dedicated to exploring, learning, and teaching the fascinating world of computer science.</p>
+
+    <h1>Meet Our Team Members:</h1>
+    <p><strong>Jitin Sain</strong>: A passionate Computer Science student with a keen interest in coding, problem-solving, and cutting-edge technologies. Jitin brings fresh ideas, enthusiasm, and a learner’s perspective to the team.</p>
+    <p><strong>Jwala Prasad</strong>: An experienced and knowledgeable Computer Science teacher with a talent for breaking down complex concepts into easy-to-understand lessons. Jwala Prasad is dedicated to fostering curiosity and inspiring the next generation of tech leaders.</p>
+
+    <p><strong>Together</strong>, we are committed to advancing knowledge in computer science, sharing insights, and working on innovative projects that showcase the power of technology in shaping the future. Join us on this journey as we dive into the endless possibilities of the digital world!</p>
 </div>
 
 <footer>
-    <p>&copy; 2024 Jitin Sain. All rights reserved.</p>
+    <div class="social-media">
+        <a href="https://www.instagram.com" class="instagram">Instagram</a>
+        <a href="https://www.facebook.com" class="facebook">Facebook</a>
+        <a href="https://www.twitter.com" class="x">X</a>
+    </div>
+    <p>&copy; 2024 CS Team. All Rights Reserved.</p>
 </footer>
 
 </body>
